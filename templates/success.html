@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Registration Successful | Wellness Center</title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='css/style.css') }}">
+
+</head>
+
+
+<body>
+
+    <!-- Navbar -->
+
+    <nav class="navbar">
+
+        <div class="logo">
+            🌿 Wellness Center
+        </div>
+
+        <a href="/" class="nav-home">
+            Home
+        </a>
+
+    </nav>
+
+
+    <!-- Success Section -->
+
+    <main class="success-page">
+
+        <div class="success-card">
+
+
+            <!-- Success Icon -->
+
+            <div class="success-icon">
+
+                ✓
+
+            </div>
+
+
+            <!-- Heading -->
+
+            <h1>
+                Registration Successful!
+            </h1>
+
+
+            <!-- Welcome -->
+
+            <p class="welcome-text">
+
+                Welcome to
+                <strong>Wellness Center</strong>,
+                <strong>{{ name }}</strong>.
+
+            </p>
+
+
+            <!-- Message -->
+
+            <p class="success-message">
+
+                Your registration has been successfully completed.
+                <br>
+                We are happy to have you with us! 🌿
+
+            </p>
+
+
+            <!-- Divider -->
+
+            <div class="success-divider"></div>
+
+
+            <!-- Button -->
+
+            <a href="/" class="register-again-btn">
+
+                Register Another User
+
+            </a>
+
+
+            <!-- Small text -->
+
+            <p class="bottom-text">
+
+                Thank you for choosing Wellness Center.
+
+            </p>
+
+        </div>
+
+    </main>
+
+
+    <!-- Footer -->
+
+    <footer>
+
+        <p>
+            © 2026 Wellness Center. All Rights Reserved.
+        </p>
+
+    </footer>
+
+</body>
+
+</html>

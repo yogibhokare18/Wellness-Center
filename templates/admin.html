@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Wellness Center - Admin</title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+
+<body>
+
+    <div class="admin-container">
+
+        <div class="dashboard-header">
+
+            <div class="header-left">
+
+                <div class="brand-icon">
+                    🌿
+                </div>
+
+                <div>
+                    <h1>Wellness Center</h1>
+                    <p>Registration Dashboard</p>
+                </div>
+
+            </div>
+
+
+            <div class="header-right">
+
+                <div class="total-card">
+
+                    <span>Total Registrations</span>
+
+                    <strong>
+                        {{ registrations|length }}
+                    </strong>
+
+                </div>
+
+                <a href="/" class="home-btn">
+                    Home
+                </a>
+
+                <a href="/admin/logout" class="logout-btn">
+                    Logout
+                </a>
+
+            </div>
+
+        </div>
+
+
+        <div class="table-box">
+
+            <h2>Registered Users</h2>
+
+            {% if registrations %}
+
+            <div class="table-wrapper">
+
+                <table class="users-table">
+
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Name</th>
+                            <th>Email</th>
+                            <th>Phone</th>
+                            <th>Gender</th>
+                            <th>DOB</th>
+                            <th>Address</th>
+                            <th>Registered On</th>
+                        </tr>
+                    </thead>
+
+                    <tbody>
+
+                        {% for user in registrations %}
+
+                        <tr>
+
+                            <td>{{ user.id }}</td>
+
+                            <td>{{ user.name }}</td>
+
+                            <td>{{ user.email }}</td>
+
+                            <td>{{ user.phone }}</td>
+
+                            <td>
+                                <span class="gender {{ user.gender|lower }}">
+                                    {{ user.gender }}
+                                </span>
+                            </td>
+
+                            <td>{{ user.dob }}</td>
+
+                            <td>{{ user.address }}</td>
+
+                            <td>{{ user.created_at }}</td>
+
+                        </tr>
+
+                        {% endfor %}
+
+                    </tbody>
+
+                </table>
+
+            </div>
+
+            {% else %}
+
+            <div class="no-data">
+                <p>No registered users found.</p>
+            </div>
+
+            {% endif %}
+
+        </div>
+
+    </div>
+
+</body>
+
+</html>

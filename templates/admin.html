@@ -81,33 +81,25 @@
 
                     <tbody>
 
-                        {% for user in registrations %}
+                    {% for registration in registrations %}
 
-                        <tr>
+                    <tr>
 
-                            <td>{{ user.id }}</td>
+                        <td>{{ loop.index }}</td>
 
-                            <td>{{ user.name }}</td>
+                        <td>{{ registration.name }}</td>
 
-                            <td>{{ user.email }}</td>
+                        <td>{{ registration.email }}</td>
 
-                            <td>{{ user.phone }}</td>
+                        <td>{{ registration.phone }}</td>
 
-                            <td>
-                                <span class="gender {{ user.gender|lower }}">
-                                    {{ user.gender }}
-                                </span>
-                            </td>
+                        <td>{{ registration.gender }}</td>
 
-                            <td>{{ user.dob }}</td>
+                        <td>{{ registration.dob }}</td>
 
-                            <td>{{ user.address }}</td>
+                    </tr>
 
-                            <td>{{ user.created_at }}</td>
-
-                        </tr>
-
-                        {% endfor %}
+                    {% endfor %}
 
                     </tbody>
 
